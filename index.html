@@ -89,6 +89,15 @@
             font-size: 16px;
             margin-left: 20px;
         }
+        .tts-button {
+            cursor: pointer;
+            background: none;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
@@ -110,14 +119,22 @@
             <img src="logo.png" alt="Level the Curve Logo">
             <div class="feed-text">
                 <h3>Eating Tool</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                <p id="feed-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
                 <a href="#">click for more...</a>
+                <button class="tts-button" onclick="speakText()">🔊 Read Aloud</button>
             </div>
         </div>
     </div>
     <script>
         function toggleMode() {
             document.body.classList.toggle('dark-mode');
+        }
+
+        function speakText() {
+            let text = document.getElementById("feed-text").innerText;
+            let speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-US";
+            speechSynthesis.speak(speech);
         }
     </script>
 </body>
