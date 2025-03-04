@@ -7,8 +7,8 @@ app.secret_key = "your_secret_key"
 
 # Configure Google OAuth
 google_bp = make_google_blueprint(
-    client_id="11516036326-vk215it0e7tlmr7s04fmt53n8vad5tg1.apps.googleusercontent.com",
-    client_secret="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",
+    client_id="",
+    client_secret="",
     offline=True,
     scope=["profile", "email"]
 )
